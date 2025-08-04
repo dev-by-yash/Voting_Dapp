@@ -1,0 +1,153 @@
+{
+    "address": "4CKofaywWaBuWYv5GDJ25fbAsTyxDzm1weZx5aZmvRkJ",
+    "metadata": {
+        "name": "voting",
+        "version": "0.1.0",
+        "spec": "0.1.0",
+        "description": "Created with Anchor"
+    },
+    "instructions": [{
+            "name": "create_proposal",
+            "discriminator": [
+                132,
+                116,
+                68,
+                174,
+                216,
+                160,
+                198,
+                22
+            ],
+            "accounts": [{
+                    "name": "proposal",
+                    "writable": true,
+                    "signer": true
+                },
+                {
+                    "name": "creator",
+                    "writable": true,
+                    "signer": true
+                },
+                {
+                    "name": "system_program",
+                    "address": "11111111111111111111111111111111"
+                }
+            ],
+            "args": [{
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "vote_on_proposal",
+            "discriminator": [
+                188,
+                239,
+                13,
+                88,
+                119,
+                199,
+                251,
+                119
+            ],
+            "accounts": [{
+                    "name": "proposal",
+                    "writable": true
+                },
+                {
+                    "name": "vote",
+                    "writable": true,
+                    "signer": true
+                },
+                {
+                    "name": "voter",
+                    "writable": true,
+                    "signer": true
+                },
+                {
+                    "name": "system_program",
+                    "address": "11111111111111111111111111111111"
+                }
+            ],
+            "args": [{
+                "name": "yes",
+                "type": "bool"
+            }]
+        }
+    ],
+    "accounts": [{
+            "name": "Proposal",
+            "discriminator": [
+                26,
+                94,
+                189,
+                187,
+                116,
+                136,
+                53,
+                33
+            ]
+        },
+        {
+            "name": "Vote",
+            "discriminator": [
+                96,
+                91,
+                104,
+                57,
+                145,
+                35,
+                172,
+                155
+            ]
+        }
+    ],
+    "types": [{
+            "name": "Proposal",
+            "type": {
+                "kind": "struct",
+                "fields": [{
+                        "name": "creator",
+                        "type": "pubkey"
+                    },
+                    {
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "type": "string"
+                    },
+                    {
+                        "name": "yes_votes",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "no_votes",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Vote",
+            "type": {
+                "kind": "struct",
+                "fields": [{
+                        "name": "voter",
+                        "type": "pubkey"
+                    },
+                    {
+                        "name": "proposal",
+                        "type": "pubkey"
+                    }
+                ]
+            }
+        }
+    ]
+}

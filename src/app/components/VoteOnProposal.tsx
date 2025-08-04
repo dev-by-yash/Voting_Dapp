@@ -18,7 +18,7 @@ export default function VoteOnProposal({ proposalPubkey }: { proposalPubkey: web
           [Buffer.from('vote'), proposalPubkey.toBuffer(), publicKey.toBuffer()],
           program.programId
         );
-        const voteData = await program.account.vote.fetch(voteAccount);
+        const voteData = await program.account.Vote.fetch(voteAccount);
         if (voteData) setHasVoted(true);
       } catch (e) {
         setHasVoted(false); // If not found, user hasn't voted

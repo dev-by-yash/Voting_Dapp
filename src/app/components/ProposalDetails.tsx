@@ -92,7 +92,7 @@ export default function ProposalDetails({
   useEffect(() => {
     const fetchProposal = async () => {
       if (!program || !proposalPubkey) return;
-      const fetched = await program.account.proposal.fetch(proposalPubkey);
+      const fetched = await program.account.Proposal.fetch(proposalPubkey);
       setProposal(fetched as ProposalAccount);
     };
     fetchProposal();

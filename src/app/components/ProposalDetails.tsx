@@ -62,13 +62,13 @@
 //     </div>
 //   );
 // }
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useWallet } from '@solana/wallet-adapter-react';
-import { web3, BN } from '@coral-xyz/anchor';
-import { useVotingProgram } from '../hooks/useVotingProgram';
-import VoteOnProposal from './VoteOnProposal';
+import { useEffect, useState } from "react";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { web3, BN } from "@coral-xyz/anchor";
+import { useVotingProgram } from "../hooks/useVotingProgram";
+import VoteOnProposal from "./VoteOnProposal";
 
 interface ProposalAccount {
   creator: web3.PublicKey;
@@ -92,7 +92,7 @@ export default function ProposalDetails({
   useEffect(() => {
     const fetchProposal = async () => {
       if (!program || !proposalPubkey) return;
-      const fetched = await program.account.Proposal.fetch(proposalPubkey);
+      const fetched = await program.account.proposal.fetch(proposalPubkey);
       setProposal(fetched as ProposalAccount);
     };
     fetchProposal();
@@ -123,8 +123,8 @@ export default function ProposalDetails({
       </p>
 
       <p className="mb-4">
-        ✅ Yes Votes: {proposal.yesVotes.toString()}<br />
-        ❌ No Votes: {proposal.noVotes.toString()}
+        ✅ Yes Votes: {proposal.yesVotes.toString()}
+        <br />❌ No Votes: {proposal.noVotes.toString()}
       </p>
 
       {!isCreator ? (

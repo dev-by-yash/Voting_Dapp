@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import WalletConnectionProvider from "./components/WalletConnectionProvider"; // adjust the path if needed
-import Providers from "./components/Providers";
-import { Privy } from "./components/Privy";
+// import Providers from "./components/Providers";
+// import { Privy } from "./components/Privy";
 
 export const metadata: Metadata = {
   title: "Solana Voting DApp",
@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
+        {/* <Providers> */}
           {/* <Privy /> */}
           <WalletConnectionProvider>{children}</WalletConnectionProvider>
-        </Providers>
+        {/* </Providers> */}
       </body>
     </html>
   );

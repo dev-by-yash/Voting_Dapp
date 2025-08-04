@@ -5,7 +5,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import CreateProposal from './CreateProposal';
 import AllProposals from './ProposalList';
 import dynamic from 'next/dynamic';
-import { PublicKey } from '@solana/web3.js';
+// import { PublicKey } from '@solana/web3.js';
 
 // Dynamically import wallet button to avoid SSR issues
 const WalletMultiButton = dynamic(
@@ -21,13 +21,13 @@ export default function Wallet() {
       {!connected ? (
         <div className="bg-white/10 backdrop-blur-lg p-10 rounded-2xl shadow-2xl border border-white/20 w-[90%] max-w-xl animate-fade-in-down text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
-            🗳️ Solana Voting DApp
+            Solana Voting DApp
           </h1>
           <p className="text-md md:text-lg text-gray-200 mb-6">
             Connect your wallet to start voting and be a part of the decentralized revolution.
           </p>
           <p className="text-sm text-gray-400 italic mb-4">
-            "Your vote on the chain matters."
+             &quot;Your vote on the chain matters.
           </p>
           <WalletMultiButton />
         </div>

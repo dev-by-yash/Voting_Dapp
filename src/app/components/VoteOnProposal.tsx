@@ -22,6 +22,7 @@ export default function VoteOnProposal({ proposalPubkey }: { proposalPubkey: web
         if (voteData) setHasVoted(true);
       } catch (e) {
         setHasVoted(false); // If not found, user hasn't voted
+        console.log(e)
       }
     };
     checkIfVoted();

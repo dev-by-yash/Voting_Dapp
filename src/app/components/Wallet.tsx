@@ -14,7 +14,7 @@ const WalletMultiButton = dynamic(
 );
 
 export default function Wallet() {
-  const { connected, publicKey } = useWallet();
+  const { connected, } = useWallet();
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen py-16 px-4">

@@ -1,6 +1,7 @@
 import { Idl, Program, AnchorProvider } from "@coral-xyz/anchor";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import idlJson from "../idl/voting.json";
+// import idlJson from "../idl/voting.json";
+import idlJson from "../../../../voting/target/idl/voting.json";
 // import { PublicKey } from "@solana/web3.js";
 import { useMemo } from "react";
 console.log("Using IDL:", idlJson);

@@ -140,7 +140,7 @@ export default function ProposalList() {
   return (
     <div className="p-8 text-white w-full flex flex-col items-center">
       <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text mb-8 animate-fade-in-up">
-        🗳️ All Proposals
+        All Proposals
       </h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
         {proposals.map(({ publicKey, account }) => (
